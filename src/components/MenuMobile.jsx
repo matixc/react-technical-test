@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from "./Header";
 import UserInfo from "./UserInfo";
 import MenuItem from "./MenuItem";
+import Footer from "./Footer";
 
 const MobileMenu = styled.div`
     display: flex;
@@ -16,11 +17,6 @@ const MobileMenu = styled.div`
 
 const MenuItemsWrapper = styled.div`
     flex: 1;
-`;
-
-// TODO temp - to be removed
-const Placeholder = styled.div`
-    text-align: center;
 `;
 
 const MobileMenuContent = [
@@ -49,7 +45,7 @@ function MenuMobile() {
                     />
                 ))}
             </MenuItemsWrapper>
-            <Placeholder>footer placeholder</Placeholder>
+            <Footer />
         </MobileMenu>
     );
 }

@@ -41,6 +41,7 @@ function MenuMobile() {
                         text={item.text}
                         icon={item.icon}
                         rotation={item.rotation || 0}
+                        isMobile={true}
                         key={`mobile-menu-item-${index}`}
                     />
                 ))}

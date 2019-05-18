@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Wrapper = styled.div`
@@ -26,15 +27,24 @@ const Text = styled.div`
     padding: 10px;
 `;
 
-function MenuItem({ icon, text, rotation }) {
+function MenuItem({ icon, text, rotation, isMobile }) {
     return (
         <Wrapper>
-            <Icon rotation={rotation}>
-                <FontAwesomeIcon icon={icon} />
-            </Icon>
+            {isMobile && (
+                <Icon rotation={rotation}>
+                    <FontAwesomeIcon icon={icon} />
+                </Icon>
+            )}
             <Text>{text}</Text>
         </Wrapper>
     );
 }
+
+MenuItem.propTypes = {
+    text: PropTypes.string.isRequired,
+    icon: PropTypes.string,
+    rotation: PropTypes.number,
+    isMobile: PropTypes.bool.isRequired
+};
 
 export default MenuItem;

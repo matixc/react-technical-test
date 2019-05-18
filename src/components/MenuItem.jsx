@@ -7,8 +7,8 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: flex-start;
     margin: 0 20px;
-    padding: 12px 0;
-    border-bottom: 1px solid #f18990;
+    padding: ${props => (props.isMobile ? "12px 0" : "5px 0")};
+    border-bottom: ${props => (props.isMobile ? "1px solid #f18990" : "none")};
 
     &:last-of-type {
         border-bottom: none;
@@ -22,20 +22,21 @@ const Icon = styled.div`
 `;
 
 const Text = styled.div`
-    font-size: 20px;
+    font-size: ${props => (props.isMobile ? "20px" : "32px")};
+    font-weight: ${props => (props.isMobile ? "400" : "900")};
     vertical-align: middle;
-    padding: 10px;
+    padding: ${props => (props.isMobile ? "10px" : "0")};
 `;
 
 function MenuItem({ text, isMobile, icon, rotation }) {
     return (
-        <Wrapper>
+        <Wrapper isMobile={isMobile}>
             {isMobile && (
                 <Icon rotation={rotation}>
                     <FontAwesomeIcon icon={icon} />
                 </Icon>
             )}
-            <Text>{text}</Text>
+            <Text isMobile={isMobile}>{text}</Text>
         </Wrapper>
     );
 }

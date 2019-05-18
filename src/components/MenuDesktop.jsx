@@ -16,38 +16,67 @@ const Wrapper = styled.div`
 `;
 
 const MenuItemsWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
     flex: 1;
 `;
 
-const DesktopMenuContent = [
-    { text: "Home" },
-    { text: "Flights" },
-    { text: "About Us" },
-    { text: "FAQ" },
-    { text: "Support" },
-    { text: "Contact Us" },
-    { text: "Profile" },
-    { text: "My Bookings" },
-    { text: "My Payments" },
-    { text: "Log Out" },
-    { text: "Resume Application" }
-];
+const GroupWrapper = styled.div`
+    min-width: 340px;
+`;
+
+const BlockWrapper = styled.div`
+    flex: 1;
+    padding: 8px 0;
+`;
+
+const DesktopMenuContent = {
+    group1: [
+        [{ text: "Home" }, { text: "Flights" }],
+        [
+            { text: "About Us" },
+            { text: "FAQ" },
+            { text: "Support" },
+            { text: "Contact Us" }
+        ]
+    ],
+    group2: [
+        { text: "Profile" },
+        { text: "My Bookings" },
+        { text: "My Payments" },
+        { text: "Log Out" },
+        { text: "Resume Application" }
+    ]
+};
 
 function MenuMobile() {
     return (
         <Wrapper>
             <Header />
-            <UserInfo />
             <MenuItemsWrapper>
-                {DesktopMenuContent.map((item, index) => (
-                    <MenuItem
-                        text={item.text}
-                        icon={item.icon}
-                        rotation={item.rotation || 0}
-                        isMobile={false}
-                        key={`mobile-menu-item-${index}`}
-                    />
-                ))}
+                <GroupWrapper>
+                    {DesktopMenuContent.group1.map((block, indexBlock) => (
+                        <BlockWrapper key={`block-wraper-${indexBlock}`}>
+                            {block.map((item, indexGroup) => (
+                                <MenuItem
+                                    text={item.text}
+                                    isMobile={false}
+                                    key={`desktop-menu-item-${indexBlock}-${indexGroup}`}
+                                />
+                            ))}
+                        </BlockWrapper>
+                    ))}
+                </GroupWrapper>
+                <GroupWrapper>
+                    <UserInfo />
+                    {DesktopMenuContent.group2.map((item, indexGroup) => (
+                        <MenuItem
+                            text={item.text}
+                            isMobile={false}
+                            key={`desktop-menu-item-${indexGroup}`}
+                        />
+                    ))}
+                </GroupWrapper>
             </MenuItemsWrapper>
             <Footer />
         </Wrapper>

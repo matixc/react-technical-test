@@ -30,18 +30,16 @@ library.add(
 
 const GlobalStyles = createGlobalStyle`
   body {
-    @import url('https://fonts.googleapis.com/css?family=Lato');
+    @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
     font-family: 'Lato', sans-serif;
   }
 `;
 
-const Wrapper = styled.div`
-    min-height: 100vh;
-`;
+const Wrapper = styled.div``;
 
 function App() {
     return (
-        <Wrapper className="App">
+        <Wrapper>
             <GlobalStyles />
             <MenuSwitcher />
         </Wrapper>

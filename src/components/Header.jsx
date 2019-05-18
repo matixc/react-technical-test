@@ -6,20 +6,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Header = styled.div`
     display: flex;
     justify-content: center;
-    margin: 0 12px;
-    padding: 15px 0;
+    margin: 0 20px;
+    padding: 8px 0;
     border-bottom: 1px solid #f18990;
 `;
 
 const Logo = styled.img`
     height: 30px;
     padding: 15px;
+    margin-left: 30px;
 `;
 
 const Icon = styled.div`
-    padding: 12px;
+    padding: 17px;
     position: absolute;
-    right: 0;
+    right: 3px;
     font-size: 20px;
 `;
 

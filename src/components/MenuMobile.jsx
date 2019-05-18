@@ -5,7 +5,7 @@ import UserInfo from "./UserInfo";
 import MenuItem from "./MenuItem";
 import Footer from "./Footer";
 
-const MobileMenu = styled.div`
+const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +32,7 @@ const MobileMenuContent = [
 
 function MenuMobile() {
     return (
-        <MobileMenu>
+        <Wrapper>
             <Header />
             <UserInfo />
             <MenuItemsWrapper>
@@ -46,7 +46,7 @@ function MenuMobile() {
                 ))}
             </MenuItemsWrapper>
             <Footer />
-        </MobileMenu>
+        </Wrapper>
     );
 }
 

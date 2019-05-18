@@ -1,5 +1,5 @@
 import React from "react";
-import MobileMenu from "./components/MenuMobile";
+import MenuSwitcher from "./components/MenuSwitcher";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
@@ -43,7 +43,7 @@ function App() {
     return (
         <Wrapper className="App">
             <GlobalStyles />
-            <MobileMenu />
+            <MenuSwitcher />
         </Wrapper>
     );
 }

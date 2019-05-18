@@ -27,7 +27,7 @@ const Text = styled.div`
     padding: 10px;
 `;
 
-function MenuItem({ icon, text, rotation, isMobile }) {
+function MenuItem({ text, isMobile, icon, rotation }) {
     return (
         <Wrapper>
             {isMobile && (

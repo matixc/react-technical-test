@@ -1,0 +1,1 @@
+export const MENU_SWITCH_BRAKEPOINT_PX = 600;

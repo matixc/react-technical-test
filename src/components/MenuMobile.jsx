@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Header from "./Header";
 
 const MobileMenu = styled.div`
     display: flex;
@@ -19,7 +20,7 @@ const Placeholder = styled.div`
 function MenuMobile() {
     return (
         <MobileMenu>
-            <Placeholder>header placeholder</Placeholder>
+            <Header />
             <Placeholder>user info placeholder</Placeholder>
             <Placeholder>menu list placeholder</Placeholder>
             <Placeholder>footer placeholder</Placeholder>

@@ -32,7 +32,15 @@ const BlockWrapper = styled.div`
 
 const DesktopMenuContent = {
     group1: [
-        [{ text: "Home" }, { text: "Flights" }],
+        [
+            {
+                text: "Home",
+                actionOnClick: () => {
+                    window.location.href = "#/home";
+                }
+            },
+            { text: "Flights" }
+        ],
         [
             { text: "About Us" },
             { text: "FAQ" },
@@ -60,6 +68,7 @@ function MenuMobile() {
                             {block.map((item, indexGroup) => (
                                 <MenuItem
                                     text={item.text}
+                                    actionOnClick={item.actionOnClick}
                                     isMobile={false}
                                     key={`desktop-menu-item-${indexBlock}-${indexGroup}`}
                                 />

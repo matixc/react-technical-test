@@ -20,7 +20,13 @@ const MenuItemsWrapper = styled.div`
 `;
 
 const MobileMenuContent = [
-    { text: "Profile", icon: "user-circle" },
+    {
+        text: "Profile",
+        icon: "user-circle",
+        actionOnClick: () => {
+            window.location.href = "#/profile";
+        }
+    },
     { text: "My Bookings", icon: "plane", rotation: 315 },
     { text: "My Payments", icon: "credit-card" },
     { text: "Support", icon: "life-ring" },
@@ -42,6 +48,7 @@ function MenuMobile() {
                         icon={item.icon}
                         rotation={item.rotation || 0}
                         isMobile
+                        actionOnClick={item.actionOnClick}
                         key={`mobile-menu-item-${index}`}
                     />
                 ))}

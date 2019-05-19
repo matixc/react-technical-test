@@ -25,12 +25,24 @@ const Text = styled.div`
     }
 `;
 
+const Mail = styled.a`
+    font-size: 22px;
+    vertical-align: middle;
+    padding: 2px 0;
+    text-decoration: none;
+    color: white;
+`;
+
 function HeaderComponent({ isMobile }) {
     return (
         <Wrapper>
             <Text>We're here to help</Text>
             {!isMobile && <Text>+44 (0) 20 8050 3459</Text>}
-            {!isMobile && <Text>support@awaymo.com</Text>}
+            {!isMobile && (
+                <Mail href="mailto:support@awaymo.com?Subject=Hello%20world">
+                    support@awaymo.com
+                </Mail>
+            )}
         </Wrapper>
     );
 }

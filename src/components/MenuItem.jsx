@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,10 +33,18 @@ const Text = styled.div`
     vertical-align: middle;
     cursor: pointer;
 
+    &:hover {
+        text-decoration: underline;
+    }
+
     @media ${BRAKEPOINTS_QUERY.MOBILE} {
         font-size: 20px;
         font-weight: 400;
         padding: 10px;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 `;
 

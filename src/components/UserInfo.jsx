@@ -25,8 +25,8 @@ const Wrapper = styled.div`
 `;
 
 const Avatar = styled.img`
-    width: 29px;
-    height: 29px;
+    width: 30px;
+    height: 30px;
     background-color: white;
     border: solid white 11px;
     border-radius: 50%;

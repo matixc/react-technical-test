@@ -15,10 +15,13 @@ const Wrapper = styled.div`
 `;
 
 const MenuWrapper = styled.div`
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 0;
     width: 100%;
     height: 100vh;
+    background-color: #fd6365;
     overflow-y: auto;
     z-index: 2;
     transition: 0.5s;
@@ -54,7 +57,7 @@ function InitialPage() {
                     />
                 )}
             </Icon>
-            <Transition in={isMenuOpen}>
+            <Transition in={isMenuOpen} timeout={500}>
                 {state => (
                     <MenuWrapper state={state}>
                         <MenuSwitcher />

@@ -6,7 +6,8 @@ import logo from "../assts/images/awaymoFullWhite.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BRAKEPOINTS_QUERY } from "../config/MenuConfig";
 
-const Header = styled.div`
+const Wrapper = styled.div`
+    position: relative;
     display: flex;
     justify-content: center;
     margin: 0 20px;
@@ -29,26 +30,26 @@ const Logo = styled.img`
 `;
 
 const Icon = styled.div`
-    padding: 17px;
     position: absolute;
-    right: 3px;
+    padding: 17px;
+    right: -15px;
     font-size: 20px;
 `;
 
-function HeaderComponent() {
+function Header() {
     const dispatch = useDispatch();
     const toogleMenu = useCallback(
         () => dispatch({ type: actions.Types.TOOGLE_MENU }),
         [dispatch]
     );
     return (
-        <Header>
+        <Wrapper>
             <Logo src={logo} />
             <Icon onClick={toogleMenu}>
                 <FontAwesomeIcon icon="times" />
             </Icon>
-        </Header>
+        </Wrapper>
     );
 }
 
-export default HeaderComponent;
+export default Header;

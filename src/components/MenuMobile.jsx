@@ -34,7 +34,7 @@ function MenuMobile() {
     return (
         <Wrapper>
             <Header />
-            <UserInfo />
+            <UserInfo isMobile />
             <MenuItemsWrapper>
                 {MobileMenuContent.map((item, index) => (
                     <MenuItem

@@ -68,7 +68,7 @@ function MenuMobile() {
                     ))}
                 </GroupWrapper>
                 <GroupWrapper>
-                    <UserInfo />
+                    <UserInfo isMobile={false} />
                     {DesktopMenuContent.group2.map((item, indexGroup) => (
                         <MenuItem
                             text={item.text}

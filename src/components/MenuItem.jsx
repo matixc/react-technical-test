@@ -2,16 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { BRAKEPOINTS_QUERY } from "../config/MenuConfig";
 
 const Wrapper = styled.div`
     display: flex;
     justify-content: flex-start;
     margin: 0 20px;
-    padding: ${props => (props.isMobile ? "12px 0" : "5px 0")};
-    border-bottom: ${props => (props.isMobile ? "1px solid #f18990" : "none")};
+    padding: 5px 0;
 
-    &:last-of-type {
-        border-bottom: none;
+    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+        padding: 12px 0;
+        border-bottom: 1px solid #f18990;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
     }
 `;
 
@@ -22,21 +27,26 @@ const Icon = styled.div`
 `;
 
 const Text = styled.div`
-    font-size: ${props => (props.isMobile ? "20px" : "32px")};
-    font-weight: ${props => (props.isMobile ? "400" : "900")};
+    font-size: 32px;
+    font-weight: 900;
     vertical-align: middle;
-    padding: ${props => (props.isMobile ? "10px" : "0")};
+
+    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+        font-size: 20px;
+        font-weight: 400;
+        padding: 10px;
+    }
 `;
 
 function MenuItem({ text, isMobile, icon, rotation }) {
     return (
-        <Wrapper isMobile={isMobile}>
+        <Wrapper>
             {isMobile && (
                 <Icon rotation={rotation}>
                     <FontAwesomeIcon icon={icon} />
                 </Icon>
             )}
-            <Text isMobile={isMobile}>{text}</Text>
+            <Text>{text}</Text>
         </Wrapper>
     );
 }

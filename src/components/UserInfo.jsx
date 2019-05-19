@@ -1,15 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import avatar from "../assts/images/avatar.png";
+import { BRAKEPOINTS_QUERY } from "../config/MenuConfig";
 
 const Wrapper = styled.div`
     display: flex;
-    flex-direction: ${props => (props.isMobile ? "column" : "row")};
-    align-items: ${props => (props.isMobile ? "center" : "flex-start")};
-    padding: ${props => (props.isMobile ? "30px 0 5px" : "20px 0 13px")};
-    border-bottom: ${props => (props.isMobile ? "none" : "1px solid #f18990")};
-    width: ${props => (props.isMobile ? "auto" : "410px")};
-    margin-bottom: ${props => (props.isMobile ? "0" : "20px")};
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 0 13px;
+    border-bottom: 1px solid #f18990;
+    width: 410px;
+    margin-bottom: 20px;
+
+    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0 5px;
+        border-bottom: none;
+        width: auto;
+        margin-bottom: 0;
+    }
 `;
 
 const Avatar = styled.img`
@@ -21,26 +31,42 @@ const Avatar = styled.img`
 `;
 
 const AvatarBorder = styled.div`
-    width: ${props => (props.isMobile ? "45px" : "56px")};
-    height: ${props => (props.isMobile ? "45px" : "56px")};
-    margin: ${props => (props.isMobile ? "0" : "0 20px")};
+    width: 56px;
+    height: 56px;
+    margin: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: solid white 3px;
     border-radius: 50%;
+
+    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+        width: 45px;
+        height: 45px;
+        margin: 0;
+    }
 `;
 
 const TextWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: ${props => (props.isMobile ? "center" : "flex-start")};
+    align-items: flex-start;
+
+    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+        align-items: center;
+    }
 `;
 
 const Name = styled.div`
-    font-size: ${props => (props.isMobile ? "24px" : "24px")};
-    font-weight: ${props => (props.isMobile ? "400" : "900")};
-    padding: ${props => (props.isMobile ? "5px 0 2px" : "2px 0")};
+    font-size: 24px;
+    font-weight: 900;
+    padding: 2px 0;
+
+    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+        font-size: 24px;
+        font-weight: 400;
+        padding: 5px 0 2px;
+    }
 `;
 
 const Text = styled.div`
@@ -49,23 +75,25 @@ const Text = styled.div`
 `;
 
 const Amount = styled.div`
-    font-weight: ${props => (props.isMobile ? "400" : "900")};
+    font-weight: 900;
     font-size: 20px;
     padding: 2px 0;
+
+    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+        font-weight: 400;
+    }
 `;
 
 function UserInfo({ isMobile }) {
     return (
-        <Wrapper isMobile={isMobile}>
-            <AvatarBorder isMobile={isMobile}>
+        <Wrapper>
+            <AvatarBorder>
                 <Avatar src={avatar} />
             </AvatarBorder>
-            <TextWrapper isMobile={isMobile}>
-                <Name isMobile={isMobile}>
-                    {isMobile ? "Dzieżok" : "Mateusz Dzieżok"}
-                </Name>
+            <TextWrapper>
+                <Name>{isMobile ? "Dzieżok" : "Mateusz Dzieżok"}</Name>
                 {isMobile && <Text>Available Balance</Text>}
-                <Amount isMobile={isMobile}>
+                <Amount>
                     {isMobile ? "£1,500.00 " : "£1,500.00 Available"}
                 </Amount>
             </TextWrapper>

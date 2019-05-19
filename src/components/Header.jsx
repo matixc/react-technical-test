@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { useDispatch } from "react-redux";
+import actions from "../modules/action";
 import styled from "styled-components";
 import logo from "../assts/images/awaymoFullWhite.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,10 +36,15 @@ const Icon = styled.div`
 `;
 
 function HeaderComponent() {
+    const dispatch = useDispatch();
+    const toogleMenu = useCallback(
+        () => dispatch({ type: actions.Types.TOOGLE_MENU }),
+        [dispatch]
+    );
     return (
         <Header>
             <Logo src={logo} />
-            <Icon>
+            <Icon onClick={toogleMenu}>
                 <FontAwesomeIcon icon="times" />
             </Icon>
         </Header>

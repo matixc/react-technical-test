@@ -1,7 +1,9 @@
 import React from "react";
-import MenuSwitcher from "./components/MenuSwitcher";
+import InitialPage from "./pages/InitialPage.jsx";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
+import { Provider as ReduxProvider } from "react-redux";
+import configureStore from "./modules/store";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -13,7 +15,8 @@ import {
     faPhone,
     faSignOutAlt,
     faQuestionCircle,
-    faInfoCircle
+    faInfoCircle,
+    faBars
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -25,7 +28,8 @@ library.add(
     faPhone,
     faSignOutAlt,
     faQuestionCircle,
-    faInfoCircle
+    faInfoCircle,
+    faBars
 );
 
 const GlobalStyles = createGlobalStyle`
@@ -37,12 +41,16 @@ const GlobalStyles = createGlobalStyle`
 
 const Wrapper = styled.div``;
 
+const reduxStore = configureStore();
+
 function App() {
     return (
-        <Wrapper>
-            <GlobalStyles />
-            <MenuSwitcher />
-        </Wrapper>
+        <ReduxProvider store={reduxStore}>
+            <Wrapper>
+                <GlobalStyles />
+                <InitialPage />
+            </Wrapper>
+        </ReduxProvider>
     );
 }
 

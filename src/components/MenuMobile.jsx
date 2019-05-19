@@ -41,12 +41,12 @@ function MenuMobile() {
                         text={item.text}
                         icon={item.icon}
                         rotation={item.rotation || 0}
-                        isMobile={true}
+                        isMobile
                         key={`mobile-menu-item-${index}`}
                     />
                 ))}
             </MenuItemsWrapper>
-            <Footer />
+            <Footer isMobile />
         </Wrapper>
     );
 }

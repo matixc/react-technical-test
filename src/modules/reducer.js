@@ -1,7 +1,14 @@
 import ACTIONS from "./action";
 
 const defaultState = {
-    isMenuOpen: false
+    isMenuOpen: false,
+    user: {
+        firstName: "Mateusz",
+        lastName: "Dzieżok",
+        amount: 1234.54,
+        currency: "GBP",
+        language: "en-GB"
+    }
 };
 
 const menuReducer = (state = defaultState, action) => {

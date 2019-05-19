@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import avatar from "../assts/images/avatar.png";
+import { prepareAvailableAmount } from "../helpers/amountHelper";
 import { BRAKEPOINTS_QUERY } from "../config/MenuConfig";
 
 const Wrapper = styled.div`
@@ -85,17 +87,25 @@ const Amount = styled.div`
 `;
 
 function UserInfo({ isMobile }) {
+    const userData = useSelector(state => state.user);
+    const amount = prepareAvailableAmount(
+        userData.amount,
+        userData.currency,
+        userData.language
+    );
     return (
         <Wrapper>
             <AvatarBorder>
                 <Avatar src={avatar} />
             </AvatarBorder>
             <TextWrapper>
-                <Name>{isMobile ? "Dzieżok" : "Mateusz Dzieżok"}</Name>
+                <Name>
+                    {isMobile
+                        ? userData.lastName
+                        : `${userData.firstName} ${userData.lastName}`}
+                </Name>
                 {isMobile && <Text>Available Balance</Text>}
-                <Amount>
-                    {isMobile ? "£1,500.00 " : "£1,500.00 Available"}
-                </Amount>
+                <Amount>{isMobile ? amount : `${amount} Available`}</Amount>
             </TextWrapper>
         </Wrapper>
     );

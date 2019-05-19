@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import actions from "../modules/action";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import { Transition } from "react-transition-group";
 import MenuSwitcher from "../components/MenuSwitcher";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,8 +18,14 @@ const MenuWrapper = styled.div`
     position: absolute;
     top: 0;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
     z-index: 2;
+    transition: 0.5s;
+    transform: translateY(
+        ${({ state }) =>
+            state === "entering" || state === "entered" ? 0 : -100}vh
+    );
 `;
 
 const Icon = styled.div`
@@ -47,11 +54,13 @@ function InitialPage() {
                     />
                 )}
             </Icon>
-            {isMenuOpen && (
-                <MenuWrapper>
-                    <MenuSwitcher />
-                </MenuWrapper>
-            )}
+            <Transition in={isMenuOpen}>
+                {state => (
+                    <MenuWrapper state={state}>
+                        <MenuSwitcher />
+                    </MenuWrapper>
+                )}
+            </Transition>
         </Wrapper>
     );
 }

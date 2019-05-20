@@ -20,15 +20,17 @@ const MenuWrapper = styled.div`
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #fd6365;
     overflow-y: auto;
     z-index: 2;
     transition: 0.5s;
     transform: translateY(
         ${({ state }) =>
-            state === "entering" || state === "entered" ? 0 : -100}vh
+            state === "entering" || state === "entered" ? 0 : "-100%"}
     );
+    height: ${({ state }) =>
+        state === "entering" || state === "entered" ? "auto" : "100vh"};
 `;
 
 const Icon = styled.div`

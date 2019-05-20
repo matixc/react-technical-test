@@ -25,7 +25,7 @@ const Text = styled.div`
     }
 `;
 
-const Mail = styled.a`
+const Link = styled.a`
     font-size: 22px;
     vertical-align: middle;
     padding: 2px 0;
@@ -37,11 +37,13 @@ function HeaderComponent({ isMobile }) {
     return (
         <Wrapper>
             <Text>We're here to help</Text>
-            {!isMobile && <Text>+44 (0) 20 8050 3459</Text>}
             {!isMobile && (
-                <Mail href="mailto:support@awaymo.com?Subject=Hello%20world">
+                <Link href="tel:+442080503459">+44 (0) 20 8050 3459</Link>
+            )}
+            {!isMobile && (
+                <Link href="mailto:support@awaymo.com?Subject=Hello%20world">
                     support@awaymo.com
-                </Mail>
+                </Link>
             )}
         </Wrapper>
     );

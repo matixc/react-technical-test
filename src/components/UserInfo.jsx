@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     align-items: flex-start;
     padding: 20px 0 13px;
     border-bottom: 1px solid #f18990;
-    width: 410px;
+    width: 340px;
     margin-bottom: 20px;
 
     @media ${BRAKEPOINTS_QUERY.MOBILE} {
@@ -21,6 +21,10 @@ const Wrapper = styled.div`
         border-bottom: none;
         width: auto;
         margin-bottom: 0;
+    }
+
+    @media ${BRAKEPOINTS_QUERY.MEDIUM} {
+        width: 410px;
     }
 `;
 

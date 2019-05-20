@@ -4,6 +4,7 @@ import Header from "./Header";
 import UserInfo from "./UserInfo";
 import MenuItem from "./MenuItem";
 import Footer from "./Footer";
+import { BRAKEPOINTS_QUERY } from "../config/MenuConfig";
 
 const Wrapper = styled.div`
     display: flex;
@@ -20,10 +21,21 @@ const MenuItemsWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex: 1;
+    justify-content: space-between;
+
+    @media ${BRAKEPOINTS_QUERY.MEDIUM} {
+        justify-content: flex-start;
+        min-width: 340px;
+    }
 `;
 
 const GroupWrapper = styled.div`
-    min-width: 340px;
+    min-width: 200px;
+    margin-right: 20px;
+
+    @media ${BRAKEPOINTS_QUERY.MEDIUM} {
+        min-width: 340px;
+    }
 `;
 
 const BlockWrapper = styled.div`

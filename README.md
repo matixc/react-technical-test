@@ -1,6 +1,6 @@
 # React technical test
 
-## Coments and description
+## Comments and description
 
 Taks completed over the weekend. With some fine-tuning on Monday.
 Took around 12-15h
@@ -13,10 +13,10 @@ Although I needed React-Redux in @next alpha version for that as it is quite new
 
 There are some things I would normally discuss with the team or things that would be already set in the projects like:
 
--   Media brakepoins
+-   Media breakpoints
     I made one for the mobile design just for now
     I would consider using library like mobile-detect.js to choose the layout.
-    I would also review with graphic designer to decide other media brakepoints, behavior and animations.
+    I would also review with graphic designer to decide other media breakpoints , behavior and animations.
 
 -   How you handle redirection and actions on links
     I went with onClick function but it is temporary solution.

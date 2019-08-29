@@ -4,7 +4,7 @@ import actions from "../modules/action";
 import styled from "styled-components";
 import logo from "../assts/images/awaymoFullWhite.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { BRAKEPOINTS_QUERY } from "../config/MenuConfig";
+import { BREAKPOINTS_QUERY } from "../config/MenuConfig";
 
 const Wrapper = styled.div`
     position: relative;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     padding: 8px 0;
     border-bottom: 2px solid white;
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         padding: 8px 0;
         border-bottom: 1px solid #f18990;
     }
@@ -24,7 +24,7 @@ const Logo = styled.img`
     height: 30px;
     padding: 15px;
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         margin-left: 30px;
     }
 `;

@@ -26,6 +26,7 @@ const MobileMenuContent = [
         actionOnClick: () => {
             window.location.href = "#/profile";
         }
+        // Used as example, probably you are using React-Router so it would look like ...router.push('/home')
     },
     { text: "My Bookings", icon: "plane", rotation: 315 },
     { text: "My Payments", icon: "credit-card" },

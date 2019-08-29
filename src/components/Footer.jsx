@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { BRAKEPOINTS_QUERY } from "../config/MenuConfig";
+import { BREAKPOINTS_QUERY } from "../config/MenuConfig";
 
 const Wrapper = styled.div`
     display: flex;
@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     padding: 15px 0 20px;
     border-top: 1px solid #f18990;
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         padding: 8px 0;
     }
 `;
@@ -20,7 +20,7 @@ const Text = styled.div`
     vertical-align: middle;
     padding: 2px 0;
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         padding-top: 10px;
     }
 `;

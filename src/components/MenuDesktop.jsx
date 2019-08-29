@@ -4,7 +4,7 @@ import Header from "./Header";
 import UserInfo from "./UserInfo";
 import MenuItem from "./MenuItem";
 import Footer from "./Footer";
-import { BRAKEPOINTS_QUERY } from "../config/MenuConfig";
+import { BREAKPOINTS_QUERY } from "../config/MenuConfig";
 
 const Wrapper = styled.div`
     display: flex;
@@ -23,7 +23,7 @@ const MenuItemsWrapper = styled.div`
     flex: 1;
     justify-content: space-between;
 
-    @media ${BRAKEPOINTS_QUERY.MEDIUM} {
+    @media ${BREAKPOINTS_QUERY.MEDIUM} {
         justify-content: flex-start;
         min-width: 340px;
     }
@@ -33,7 +33,7 @@ const GroupWrapper = styled.div`
     min-width: 200px;
     margin-right: 20px;
 
-    @media ${BRAKEPOINTS_QUERY.MEDIUM} {
+    @media ${BREAKPOINTS_QUERY.MEDIUM} {
         min-width: 340px;
     }
 `;
@@ -51,6 +51,7 @@ const DesktopMenuContent = {
                 actionOnClick: () => {
                     window.location.href = "#/home";
                 }
+                // Used as example, probably you are using React-Router so it would look like ...router.push('/home')
             },
             { text: "Flights" }
         ],

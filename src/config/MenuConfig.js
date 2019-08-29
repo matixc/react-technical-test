@@ -1,9 +1,9 @@
-const BRAKEPOINTS_PX = {
+const BREAKPOINTS_PX = {
     MOBILE: 600,
     MEDIUM: 790
 };
 
-export const BRAKEPOINTS_QUERY = {
-    MOBILE: `(max-width: ${BRAKEPOINTS_PX.MOBILE}px)`,
-    MEDIUM: `(min-width: ${BRAKEPOINTS_PX.MEDIUM}px)`
+export const BREAKPOINTS_QUERY = {
+    MOBILE: `(max-width: ${BREAKPOINTS_PX.MOBILE}px)`,
+    MEDIUM: `(min-width: ${BREAKPOINTS_PX.MEDIUM}px)`
 };

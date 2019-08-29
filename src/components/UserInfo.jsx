@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import avatar from "../assts/images/avatar.png";
 import { prepareAvailableAmount } from "../helpers/amountHelper";
-import { BRAKEPOINTS_QUERY } from "../config/MenuConfig";
+import { BREAKPOINTS_QUERY } from "../config/MenuConfig";
 
 const Wrapper = styled.div`
     display: flex;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     width: 340px;
     margin-bottom: 20px;
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         flex-direction: column;
         align-items: center;
         padding: 30px 0 5px;
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
         margin-bottom: 0;
     }
 
-    @media ${BRAKEPOINTS_QUERY.MEDIUM} {
+    @media ${BREAKPOINTS_QUERY.MEDIUM} {
         width: 410px;
     }
 `;
@@ -46,7 +46,7 @@ const AvatarBorder = styled.div`
     border: solid white 3px;
     border-radius: 50%;
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         width: 45px;
         height: 45px;
         margin: 0;
@@ -58,7 +58,7 @@ const TextWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         align-items: center;
     }
 `;
@@ -68,7 +68,7 @@ const Name = styled.div`
     font-weight: 900;
     padding: 2px 0;
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         font-size: 24px;
         font-weight: 400;
         padding: 5px 0 2px;
@@ -85,7 +85,7 @@ const Amount = styled.div`
     font-size: 20px;
     padding: 2px 0;
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         font-weight: 400;
     }
 `;

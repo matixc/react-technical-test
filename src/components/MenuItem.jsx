@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { BRAKEPOINTS_QUERY } from "../config/MenuConfig";
+import { BREAKPOINTS_QUERY } from "../config/MenuConfig";
 
 const Wrapper = styled.div`
     display: flex;
@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     margin: 0 20px;
     padding: 5px 0;
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         padding: 12px 0;
         border-bottom: 1px solid #f18990;
         cursor: pointer;
@@ -37,7 +37,7 @@ const Text = styled.div`
         text-decoration: underline;
     }
 
-    @media ${BRAKEPOINTS_QUERY.MOBILE} {
+    @media ${BREAKPOINTS_QUERY.MOBILE} {
         font-size: 20px;
         font-weight: 400;
         padding: 10px;

@@ -21,13 +21,13 @@ const Wrapper = styled.div`
     }
 `;
 
-const Icon = styled.div`
+const Icon = styled.a`
     padding: 10px 0;
     font-size: 20px;
     transform: rotate(${props => props.rotation || 0}deg);
 `;
 
-const Text = styled.div`
+const Text = styled.a`
     font-size: 32px;
     font-weight: 900;
     vertical-align: middle;

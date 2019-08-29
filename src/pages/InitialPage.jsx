@@ -38,12 +38,13 @@ const Icon = styled.div`
     justify-content: flex-end;
     padding: 18px;
     z-index: 1;
+    cursor: pointer;
 `;
 
 function InitialPage() {
     const dispatch = useDispatch();
-    const toogleMenu = useCallback(
-        () => dispatch({ type: actions.Types.TOOGLE_MENU }),
+    const toggleMenu = useCallback(
+        () => dispatch({ type: actions.Types.TOGGLE_MENU }),
         [dispatch]
     );
     const isMenuOpen = useSelector(state => state.isMenuOpen);
@@ -55,7 +56,7 @@ function InitialPage() {
                     <FontAwesomeIcon
                         icon="bars"
                         size="2x"
-                        onClick={toogleMenu}
+                        onClick={toggleMenu}
                     />
                 )}
             </Icon>

@@ -1,5 +1,5 @@
 const Types = {
-    TOOGLE_MENU: "TOOGLE_MENU"
+    TOGGLE_MENU: "TOGGLE_MENU"
 };
 
 export default {

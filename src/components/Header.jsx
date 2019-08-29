@@ -34,18 +34,19 @@ const Icon = styled.div`
     padding: 17px;
     right: -15px;
     font-size: 20px;
+    cursor: pointer;
 `;
 
 function Header() {
     const dispatch = useDispatch();
-    const toogleMenu = useCallback(
-        () => dispatch({ type: actions.Types.TOOGLE_MENU }),
+    const toggleMenu = useCallback(
+        () => dispatch({ type: actions.Types.TOGGLE_MENU }),
         [dispatch]
     );
     return (
         <Wrapper>
             <Logo src={logo} />
-            <Icon onClick={toogleMenu}>
+            <Icon onClick={toggleMenu}>
                 <FontAwesomeIcon icon="times" />
             </Icon>
         </Wrapper>

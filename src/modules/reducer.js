@@ -13,7 +13,7 @@ const defaultState = {
 
 const menuReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case ACTIONS.Types.TOOGLE_MENU: {
+        case ACTIONS.Types.TOGGLE_MENU: {
             return {
                 ...state,
                 isMenuOpen: !state.isMenuOpen

@@ -34,8 +34,6 @@ library.add(
 
 const GlobalStyles = createGlobalStyle`
   body {
-    @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
-    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
     font-family: "Lato", sans-serif;
